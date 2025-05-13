@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <title>Web Scraper Mercado Livre</title>
+</head>
+<body>
+    <h1>Buscar Produtos</h1>
+    <form method="post">
+        <input type="text" name="termo" placeholder="Digite o produto" required>
+        <input type="number" name="quantidade" value="10" min="1" max="50">
+        <button type="submit">Buscar</button>
+    </form>
+    <h2>Resultados:</h2>
+    <ul>
+        {% for produto in resultados %}
+            <li>{{ produto.nome }} - R$ {{ produto.preco }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
